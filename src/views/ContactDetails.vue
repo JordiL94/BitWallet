@@ -1,5 +1,5 @@
 <template>
-	<section class="contact-app"></section>
+	<section class="contact-details"></section>
 </template>
 
 <script>
