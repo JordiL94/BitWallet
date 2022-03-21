@@ -1,3 +1,10 @@
+'use strict';
+
+export default {
+    getUser
+}
+
+
 function getUser() {
     const user = {
         name: "Ochoa Hyde",
