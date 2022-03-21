@@ -3,7 +3,12 @@
 import { utils } from './utils.service.js';
 
 export const DbService = {
-
+    query,
+    get,
+    remove,
+    post,
+    put,
+    insert
 }
 
 const ID_FIELD = '_id';
@@ -39,5 +44,20 @@ async function post(collectionName, item) {
 }
 
 async function put(collectionName, item) {
-    
+    const collection = await query(collectionName);
+    const idx = collection.findIndex(item => item[ID_FIELD] === id);
+    if(id === -1) throw new Error('Could not find item');
+    collection[idx] = item;
+
+    utils.storeToStorage(collectionName, collection);
+    return Promise.resolve(item);
+}
+
+async function insert(collectionName, items) {
+    const collection = await query(collectionName);
+    items.forEach(item => item[ID_FIELD] = utils.getRandomId());
+    collection.push(...items);
+
+    utils.storeToStorage(collectionName, collection);
+    return Promise.resolve();
 }
