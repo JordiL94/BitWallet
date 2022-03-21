@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomePage from '@/views/HomePage.vue';
 import ContactApp from '@/views/ContactApp.vue';
 import ContactDetails from '@/views/ContactDetails.vue';
-import ContactEdit from '@/views/ContactEdit.vue';
+import ContactEditPage from '@/components/contact/ContactEditPage.vue';
 import StatisticsPage from '@/views/StatisticsPage.vue';
 
 const router = createRouter({
@@ -25,8 +25,8 @@ const router = createRouter({
 		},
 		{
 			path: "/contact/edit/:id?",
-			name: "ContactEdit",
-			component: ContactEdit
+			name: "ContactEditPage",
+			component: ContactEditPage
 		},
 		{
 			path: "/statistics",
