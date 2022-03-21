@@ -1,6 +1,6 @@
 <template>
   <section class="contact-preview">
-      <RouterLink :to="`contact/${contact._id}`">{{contact.name}}</RouterLink>
+      <RouterLink :to="`/contact/${contact._id}`">{{contact.name}}</RouterLink>
   </section>
 </template>
 

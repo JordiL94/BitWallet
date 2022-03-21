@@ -21,8 +21,8 @@ import ContactFilter from '@/components/contact/ContactFilter.vue';
 				filterBy: null
 			};
 		},
-		created() {
-			this.contacts = contactService.getContacts();
+		async created() {
+			this.contacts = await contactService.query();
 		},
 		methods: {
 			setFilter(filterBy) {

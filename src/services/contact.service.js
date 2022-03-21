@@ -5,6 +5,11 @@ import { DbService } from './db-service.js';
 const KEY = 'contacts';
 
 export default {
+    query,
+    get,
+    remove,
+    save,
+    getEmptyContact
 };
 
 async function query() {
@@ -14,7 +19,7 @@ async function query() {
         await DbService.insert(KEY, contacts);
     }
 
-    return contacts
+    return contacts;
 }
 
 async function get(id) {

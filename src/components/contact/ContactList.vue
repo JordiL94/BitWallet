@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import ContactPreview from '@/components/ContactPreview.vue';
+import ContactPreview from './ContactPreview.vue';
 export default {
     props: {
         contacts: Array
