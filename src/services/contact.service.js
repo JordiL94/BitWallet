@@ -69,11 +69,3 @@ function _createDefaultContacts() {
         phone: "+386 (522) 689-2908"
     }]
 }
-
-
-
-
-
-
-
-

@@ -45,6 +45,7 @@
 		},
 		methods: {
 			async save() {
+				console.log('contactToEdit:', this.contactToEdit._id);
 				await contactService.save(this.contactToEdit);
 				this.$router.push('/contact');
 			},
