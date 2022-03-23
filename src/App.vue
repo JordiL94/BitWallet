@@ -13,6 +13,7 @@
 		},
 		async created() {
 			await this.$store.dispatch({ type: 'loadContacts' });
+			await this.$store.dispatch({ type: 'loadUser' });
 		},
 	};
 </script>
