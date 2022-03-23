@@ -7,7 +7,6 @@
 </template>
 
 <script>
-import contactService from '@/services/contact.service.js';
 import ContactList from '@/components/contact/ContactList.vue';
 import ContactFilter from '@/components/contact/ContactFilter.vue';
 	export default {
@@ -17,12 +16,8 @@ import ContactFilter from '@/components/contact/ContactFilter.vue';
 		},
 		data() {
 			return {
-				contacts: null,
 				filterBy: null
 			};
-		},
-		async created() {
-			this.contacts = await contactService.query();
 		},
 		methods: {
 			setFilter(filterBy) {
@@ -30,6 +25,9 @@ import ContactFilter from '@/components/contact/ContactFilter.vue';
 			}
 		},
 		computed: {
+			contacts() {
+				return this.$store.getters.contacts;
+			},
 			contactsToShow() {
 				if(!this.filterBy) return this.contacts;
 				const regex = new RegExp(this.filterBy.name, 'i');

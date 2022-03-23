@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHistory, createWebHashHistory } from "vue-router";
 import HomePage from '@/views/HomePage.vue';
 import ContactApp from '@/views/ContactApp.vue';
 import ContactDetails from '@/views/ContactDetails.vue';
@@ -6,7 +6,8 @@ import ContactEditPage from '@/components/contact/ContactEditPage.vue';
 import StatisticsPage from '@/views/StatisticsPage.vue';
 
 const router = createRouter({
-	history: createWebHistory(import.meta.env.BASE_URL),
+	// history: createWebHistory(import.meta.env.BASE_URL),
+	history: createWebHashHistory(),
 	routes: [
 		{
 			path: "/",

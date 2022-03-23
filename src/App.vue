@@ -6,10 +6,15 @@
 </template>
 
 <script>
-import AppHeader from '@/components/AppHeader.vue';
+	import AppHeader from '@/components/AppHeader.vue';
 	export default {
-    components: { AppHeader }
-};
+		components: {
+			AppHeader,
+		},
+		async created() {
+			await this.$store.dispatch({ type: 'loadContacts' });
+		},
+	};
 </script>
 
 <style></style>

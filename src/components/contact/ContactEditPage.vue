@@ -3,11 +3,11 @@
 		<h2>{{ pageTitle }}</h2>
 		<div class="edit-actions flex space between">
 			<RouterLink to="/contact">Back</RouterLink>
-			<button v-if="contactToEdit?._id" @click="remove">Delete</button>
+			<button v-if="contactToEdit?._id" @click="remove(contactToEdit._id)">Delete</button>
 		</div>
 		<form
 			v-if="contactToEdit"
-			@submit.prevent="save"
+			@submit.prevent="save(contactToEdit)"
 			class="flex column align-center"
 		>
 			<input
@@ -31,30 +31,34 @@
 </template>
 
 <script>
-	import contactService from '@/services/contact.service.js';
 	export default {
-		data() {
-			return {
-				contactToEdit: null,
-			};
-		},
 		async created() {
 			const { id } = this.$route.params;
-			if (id) this.contactToEdit = await contactService.get(id);
-			else this.contactToEdit = contactService.getEmptyContact();
+			if (id) await this.$store.dispatch({ type: 'getContact', id });
+			else await this.$store.dispatch({ type: 'getEmptyContact', id });
 		},
 		methods: {
-			async save() {
-				console.log('contactToEdit:', this.contactToEdit._id);
-				await contactService.save(this.contactToEdit);
-				this.$router.push('/contact');
+			async save(contactToSave) {
+				try {
+					await this.$store.dispatch({type: 'saveContact', contactToSave });
+					this.$router.push('/contact');
+				} catch(err) {
+					console.log('Could not save successfully', err);
+				}
 			},
-			async remove() {
-				await contactService.remove(this.contactToEdit._id);
-				this.$router.push('/contact');
+			async remove(id) {
+				try {
+					await this.$store.dispatch({type: 'removeContact', id});
+					this.$router.push('/contact');
+				} catch(err) {
+					console.log('Could not delete successfully', err);
+				}
 			},
 		},
 		computed: {
+			contactToEdit() {
+				return {...this.$store.getters.contact};
+			},
 			pageTitle() {
 				const { id } = this.$route.params;
 				return id ? 'Edit Contact' : 'Add Contact';
