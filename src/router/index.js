@@ -5,6 +5,7 @@ import ContactDetails from '@/views/ContactDetails.vue';
 import ContactEditPage from '@/components/contact/ContactEditPage.vue';
 import StatisticsPage from '@/views/StatisticsPage.vue';
 import SignupPage from '@/views/SignupPage.vue';
+import store from '@/store/index.js';
 
 const router = createRouter({
 	// history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,7 +45,7 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-	const user = this.$store.getters.user;
+	const user = store.getters.user;
 	if(to.name !== 'SignUp' && !user) next({ name: 'SignUp' }); 
 	else next();
 })
