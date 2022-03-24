@@ -1,6 +1,7 @@
 <template>
     <section v-if="moves" class="move-list">
-        <ul>{{title}}
+        <h4>{{title}}</h4>
+        <ul>
             <li v-for="(move, idx) in moves" :key="move.toId + ':' + idx">
                 <h5>{{move.to}}</h5>
                 <h6>{{move.amount}}</h6>

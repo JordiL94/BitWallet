@@ -1,13 +1,30 @@
 <template>
-  
+	<section class="transfer-fund">
+        <form @submit.prevent="transfer">
+            <input type="number" v-model="amountToTransfer" />
+            <button>transfer</button>
+        </form>
+    </section>
 </template>
 
 <script>
-export default {
-
-}
+	export default {
+        data() {
+            return {
+                amountToTransfer: null
+            }
+        },
+		props: {
+			maxCoins: Number,
+			contact: Object,
+		},
+		methods: {
+			transfer() {
+                if(this.amountToTransfer > this.maxCoins) return;
+				this.$emit('transferCoins', this.amountToTransfer);
+			},
+		},
+	};
 </script>
 
-<style>
-
-</style>
+<style></style>
