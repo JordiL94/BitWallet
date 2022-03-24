@@ -1,5 +1,5 @@
 <template>
-	<section class="home-page">
+	<section v-if="user" class="home-page">
 		<h1>Home Page</h1>
         <p>Hello {{user.name}}</p>
         <p>You currently have {{user.coins}} bitcoins</p>
@@ -7,20 +7,20 @@
 </template>
 
 <script>
-	import userService from '@/services/user.service.js';
 	import bitcoinService from '@/services/bitcoin.service.js';
 	export default {
         components: {
-
+            bitcoinService
         },
         data() {
             return {
-                user: null,
                 rate: null
             };
         },
-        created() {
-            this.user = userService.getUser();
+        computed: {
+            user() {
+                return this.$store.getters.user;
+            }
         },
         methods: {
         }

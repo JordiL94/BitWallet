@@ -19,6 +19,10 @@ export default {
             const user = await userService.getUser();
             commit({ type: 'setUser', user });
         },
+        async signup({ commit, name }) {
+            const user = await userService.signup(name);
+            commit({ type: 'setUser', user });
+        },
         logout({ commit }) {
             userService.logout();
             commit({ type: 'setUser', user: null });

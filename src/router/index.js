@@ -4,6 +4,7 @@ import ContactApp from '@/views/ContactApp.vue';
 import ContactDetails from '@/views/ContactDetails.vue';
 import ContactEditPage from '@/components/contact/ContactEditPage.vue';
 import StatisticsPage from '@/views/StatisticsPage.vue';
+import SignupPage from '@/views/SignupPage.vue';
 
 const router = createRouter({
 	// history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,6 +14,11 @@ const router = createRouter({
 			path: "/",
 			name: "Home",
 			component: HomePage,
+		},
+		{
+			path: "/signup",
+			name: "SignUp",
+			component: SignupPage
 		},
 		{
 			path: "/contact",
@@ -36,5 +42,11 @@ const router = createRouter({
 		},
 	],
 });
+
+router.beforeEach((to, from, next) => {
+	const user = this.$store.getters.user;
+	if(to.name !== 'SignUp' && !user) next({ name: 'SignUp' }); 
+	else next();
+})
 
 export default router;

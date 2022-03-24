@@ -1,5 +1,6 @@
 import { createStore } from 'vuex';
 import contactModule from '@/store/modules/contact.module.js';
+import userModule from '@/store/modules/user.module.js';
 
 const store = createStore({
     strict: true,
@@ -14,7 +15,8 @@ const store = createStore({
     },
     actions: {},
     modules: {
-        contactModule
+        contactModule,
+        userModule
     }
 });
 
