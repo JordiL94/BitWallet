@@ -19,7 +19,7 @@ function getUser() {
 
 function signup(name) {
     const user = {
-        id: utils.getRandomId,
+        id: utils.getRandomId(),
         name,
         coins: 100,
         moves: []
