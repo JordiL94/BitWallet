@@ -46,7 +46,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
 	const user = store.getters.user;
-	if(to.name !== 'SignUp' && !user) next({ name: 'SignUp' }); 
+	if(!user && to.name !== 'SignUp') next({ name: 'SignUp' }); 
 	else next();
 })
 

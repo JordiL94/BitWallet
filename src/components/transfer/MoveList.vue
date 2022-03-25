@@ -1,6 +1,6 @@
 <template>
     <section v-if="moves" class="move-list">
-        <h4>{{title}}</h4>
+        <!-- <h4>{{title}}</h4> -->
         <ul>
             <li v-for="(move, idx) in moves" :key="move.toId + ':' + idx">
                 <h5>{{move.to}}</h5>
@@ -15,7 +15,7 @@
 import { utils } from "@/services/utils.service";
 export default {
     props: {
-        title,
+        // title: String,
         moves: Array
     },
     methods: {

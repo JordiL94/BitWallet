@@ -5,8 +5,8 @@
 		<h3>{{ contact.name }}</h3>
 		<p>Phone: {{ contact.phone }}</p>
 		<p>E-Mail: {{ contact.email }}</p>
-		<TransferFund :contact="contact" :maxFund="contact.coins" />
-		<MoveList :moves="moves" />
+		<TransferFund :contact="contact" :maxCoins="user.coins" @transfer="transferCoins" />
+		<MoveList :moves="moves" :title="`Last 5 moves to ${contact.name}`"/>
 	</section>
 	<div v-else class="loading"></div>
 </template>
@@ -34,12 +34,14 @@
 				return this.$store.getters.contact;
 			},
 			moves() {
-				const user = this.$store.getters.user;
-				const moves = user.moves.filter(
+				const moves = this.user.moves.filter(
 					(move) => move.toId === this.contact._id
 				);
 				return moves;
 			},
+			user() {
+				return this.$store.getters.user;
+			}
 		},
 	};
 </script>

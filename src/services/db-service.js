@@ -55,7 +55,9 @@ async function put(collectionName, item) {
 
 async function insert(collectionName, items) {
     const collection = await query(collectionName);
-    items.forEach(item => item[ID_FIELD] = utils.getRandomId());
+    items.forEach(item => {
+        if(!item[ID_FIELD]) item[ID_FIELD] = utils.getRandomId()
+    });
     collection.push(...items);
 
     utils.storeToStorage(collectionName, collection);

@@ -22,7 +22,7 @@ function signup(name) {
         id: utils.getRandomId(),
         name,
         coins: 100,
-        moves: []
+        moves: _addMoves()
     };
 
     utils.storeToStorage(KEY, user);
@@ -31,7 +31,7 @@ function signup(name) {
 
 async function addMove(contact, amount) {
     const user = await getUser();
-    if(user.coins < amount) return Promise.reject('Insufficient funds');
+    if (user.coins < amount) return Promise.reject('Insufficient funds');
     user.coins -= amount;
 
     const move = {
@@ -48,6 +48,43 @@ async function addMove(contact, amount) {
 
 function logout() {
     utils.storeToStorage(KEY, null);
+}
+
+function _addMoves() {
+    const moves = [
+        {
+            toId: 'd99e3u2ih329',
+            to: 'Nora Channer',
+            at: new Date(2652712571),
+            amount: 0.17
+        },
+        {
+            toId: '09tegu6i83yd',
+            to: 'Tabby Slayny',
+            at: new Date(2652712471),
+            amount: 1
+        },
+        {
+            toId: 'a39x7zzi2121',
+            to: 'Margarette Ballefant',
+            at: new Date(2652712371),
+            amount: 2.06
+        },
+        {
+            toId: 'd99e3u2ih329',
+            to: 'Nora Channer',
+            at: new Date(2652712271),
+            amount: 0.89
+        },
+        {
+            toId: 'd99e3u2ih329',
+            to: 'Nora Channer',
+            at: new Date(2652712171),
+            amount: 0.03
+        },
+    ];
+
+    return moves;
 }
 
 // async function login(username, password) {
