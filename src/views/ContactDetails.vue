@@ -5,7 +5,7 @@
 		<h3>{{ contact.name }}</h3>
 		<p>Phone: {{ contact.phone }}</p>
 		<p>E-Mail: {{ contact.email }}</p>
-		<TransferFund :contact="contact" :maxCoins="user.coins" @transfer="transferCoins" />
+		<TransferFund :contact="contact" :maxCoins="user.coins" @transferCoins="transferCoins" />
 		<MoveList :moves="moves" :title="`Last 5 moves to ${contact.name}`"/>
 	</section>
 	<div v-else class="loading"></div>
@@ -25,7 +25,7 @@
 		},
 		methods: {
 			async transferCoins(amount) {
-				await this.$store.addMove(contact, amount);
+				await this.$store.dispatch({type: 'addMove', contact: this.contact, amount});
 				this.$router.push('/');
 			},
 		},
@@ -41,7 +41,10 @@
 			},
 			user() {
 				return this.$store.getters.user;
-			}
+			},
+            title() {
+                return `Last 5 moves to ${this.contact.name}`;
+            }
 		},
 	};
 </script>

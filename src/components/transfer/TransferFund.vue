@@ -1,6 +1,6 @@
 <template>
 	<section class="transfer-fund">
-        <form @submit.prevent="transfer">
+        <form @submit.prevent="transferCoins">
             <input type="number" v-model="amountToTransfer" />
             <button>transfer</button>
         </form>
@@ -19,7 +19,7 @@
 			contact: Object,
 		},
 		methods: {
-			transfer() {
+			transferCoins() {
                 if(this.amountToTransfer > this.maxCoins) return;
 				this.$emit('transferCoins', this.amountToTransfer);
 			},

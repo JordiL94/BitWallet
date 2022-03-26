@@ -31,6 +31,7 @@ function getRandomInt(num1, num2) {
 }
 
 function getDate(timestamp) {
-    const date = `${timestamp.getDate()}/${timestamp.getMonth()}/${timestamp.getFullYear()}`;
-    return date;
+    const date = new Date(timestamp);
+    const formattedDate = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
+    return formattedDate;
 }
