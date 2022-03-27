@@ -4,6 +4,8 @@
 
 body {
     margin: 0;
+    font-family: Roboto;
+    background-color: #56BBF1;
 }
 
 h1,
@@ -14,4 +16,9 @@ h5,
 h6,
 p {
     margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
