@@ -1,5 +1,5 @@
 <template>
-	<section class="contact-app">
+	<section class="contact-app main-layout">
 		<h3>Contacts</h3>
 		<ContactFilter @set-filter="setFilter" />
 		<ContactList :contacts="contactsToShow" />
@@ -37,5 +37,3 @@ import ContactFilter from '@/components/contact/ContactFilter.vue';
 
 	};
 </script>
-
-<style></style>

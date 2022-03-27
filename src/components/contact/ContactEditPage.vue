@@ -1,5 +1,5 @@
 <template>
-	<section class="contact-edit">
+	<section class="contact-edit main-layout">
 		<h2>{{ pageTitle }}</h2>
 		<div class="edit-actions flex space between">
 			<RouterLink to="/contact">Back</RouterLink>
@@ -66,5 +66,3 @@
 		},
 	};
 </script>
-
-<style></style>

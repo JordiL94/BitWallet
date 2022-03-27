@@ -1,5 +1,5 @@
 <template>
-	<section v-if="user" class="app-header flex space-between">
+	<section v-if="user" class="app-header flex space-between main-layout">
 		<!-- <img src="../assets/img/logo.png" alt="" /> -->
 		<h3>BitWallet</h3>
 		<nav>
@@ -8,7 +8,7 @@
 			<RouterLink to="/statistics">Stats</RouterLink>
 		</nav>
 	</section>
-	<h3 v-else>DashApp</h3>
+	<h3 v-else>BitWallet</h3>
 </template>
 
 <script>
@@ -20,5 +20,3 @@
 		},
 	};
 </script>
-
-<style></style>

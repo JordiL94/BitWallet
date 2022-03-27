@@ -1,6 +1,7 @@
 <template>
-	<section class="signup-page">
-        <h3>Signup</h3>
+	<section class="signup-page main-layout">
+        <h3>Signup and start exploring our demo!</h3>
+        <p>Just enter your name to recieve complementary coins that allow you to use our services</p>
         <form @submit.prevent="signup(this.name)">
             <input type="text" v-model="this.name" placeholder="Enter your name">
         </form>
@@ -27,5 +28,3 @@
         },
     };
 </script>
-
-<style></style>

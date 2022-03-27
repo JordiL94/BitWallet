@@ -1,12 +1,12 @@
 <template>
-	<section v-if="contact" class="contact-details">
+	<section v-if="contact" class="contact-details main-layout">
 		<RouterLink to="/contact">Back</RouterLink>
 		<RouterLink :to="`/contact/edit/${contact._id}`">Edit</RouterLink>
 		<h3>{{ contact.name }}</h3>
 		<p>Phone: {{ contact.phone }}</p>
 		<p>E-Mail: {{ contact.email }}</p>
 		<TransferFund :contact="contact" :maxCoins="user.coins" @transferCoins="transferCoins" />
-		<MoveList :moves="moves" :title="`Last 5 moves to ${contact.name}`"/>
+		<MoveList :moves="moves" :title="`All moves to ${contact.name}`"/>
 	</section>
 	<div v-else class="loading"></div>
 </template>
@@ -37,6 +37,7 @@
 				const moves = this.user.moves.filter(
 					(move) => move.toId === this.contact._id
 				);
+                moves.sort((a, b) => b.at - a.at);
 				return moves;
 			},
 			user() {
@@ -48,5 +49,3 @@
 		},
 	};
 </script>
-
-<style></style>

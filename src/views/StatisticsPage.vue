@@ -1,9 +1,7 @@
 <template>
-	<section class="statstics-page"></section>
+	<section class="statstics-page main-layout"></section>
 </template>
 
 <script>
 	export default {};
 </script>
-
-<style></style>

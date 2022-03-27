@@ -1,6 +1,6 @@
-# BitcoinWallet
+# BitWallet
 
-This template should help get you started developing with Vue 3 in Vite.
+This App is a demo of a crypto currency transfer app inspired by cash transfer apps like Bit and Cash App.
 
 ## Recommended IDE Setup
 
