@@ -3,7 +3,6 @@ import HomePage from '@/views/HomePage.vue';
 import ContactApp from '@/views/ContactApp.vue';
 import ContactDetails from '@/views/ContactDetails.vue';
 import ContactEditPage from '@/components/contact/ContactEditPage.vue';
-import StatisticsPage from '@/views/StatisticsPage.vue';
 import SignupPage from '@/views/SignupPage.vue';
 import store from '@/store/index.js';
 
@@ -35,11 +34,6 @@ const router = createRouter({
 			path: "/contact/edit/:id?",
 			name: "ContactEditPage",
 			component: ContactEditPage
-		},
-		{
-			path: "/statistics",
-			name: "StatisticsPage",
-			component: StatisticsPage
 		},
 	],
 });
