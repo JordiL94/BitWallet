@@ -1,9 +1,15 @@
 @import "./base";
 @import "./helpers";
 @import "./layout";
-@import "./components/app-header";
+
+// Setup
 @import "./setup/fonts";
 
+// Components
+@import "./components/app-header";
+
+// Views
+@import "./views/signup-page";
 pre {
     text-align: left;
 }

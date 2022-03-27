@@ -1,9 +1,10 @@
 <template>
 	<section v-if="user" class="app-header flex space-between">
+		<!-- <img src="../assets/img/logo.png" alt="" /> -->
 		<h3>BitWallet</h3>
 		<nav>
-			<RouterLink to="/">Me</RouterLink> | 
-			<RouterLink to="/contact">Contacts</RouterLink> | 
+			<RouterLink to="/">Me</RouterLink> |
+			<RouterLink to="/contact">Contacts</RouterLink> |
 			<RouterLink to="/statistics">Stats</RouterLink>
 		</nav>
 	</section>
