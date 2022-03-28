@@ -1,6 +1,5 @@
 <template>
-	<section class="contact-app main-layout">
-		<h3>Contacts</h3>
+	<section class="contact-app main-layout flex column align-center">
 		<ContactFilter @set-filter="setFilter" />
 		<ContactList :contacts="contactsToShow" />
 	</section>
