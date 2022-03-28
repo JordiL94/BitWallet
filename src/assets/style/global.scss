@@ -10,9 +10,11 @@
 @import "./components/transfer/move-list";
 @import "./components/contact/contact-preview";
 @import "./components/contact/contact-filter";
+@import "./components/contact/contact-list";
 
 // Views
 @import "./views/signup-page";
+
 pre {
     text-align: left;
 }
