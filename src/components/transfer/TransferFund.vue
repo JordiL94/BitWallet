@@ -1,8 +1,8 @@
 <template>
 	<section class="transfer-fund">
         <form @submit.prevent="transferCoins">
-            <input type="number" v-model="amountToTransfer" />
-            <button>transfer</button>
+            <input type="number" v-model="amountToTransfer" placeholder="Amount to transfer"/>
+            <button>send</button>
         </form>
     </section>
 </template>

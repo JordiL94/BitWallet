@@ -5,7 +5,8 @@ export const utils = {
     loadFromStorage,
     getRandomInt,
     getRandomId,
-    getDate
+    getDate,
+    getAvgValues
 };
 
 function storeToStorage(key, value) {
@@ -34,4 +35,23 @@ function getDate(timestamp) {
     const date = new Date(timestamp);
     const formattedDate = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
     return formattedDate;
+}
+
+function getAvgValues(arr) {
+    arr.splice(150, 1);
+    let arrLength = arr.length / 5;
+    let newArr = [];
+    let idx = 0;
+    for (let j = 0; j < 5; j++) {
+        let avg = 0;
+        for (let i = idx; i < arrLength + idx; i++) {
+            avg += arr[i].y;
+        }
+        console.log({ avg });
+        avg = avg / arrLength;
+        newArr.push(avg);
+        idx += 30;
+    }
+    console.log({ newArr });
+    return newArr;
 }

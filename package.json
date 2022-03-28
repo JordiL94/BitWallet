@@ -9,8 +9,11 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "axios": "^0.26.1",
+    "chart.js": "^3.7.1",
     "sass": "^1.49.9",
     "vue": "^3.2.31",
+    "vue-chart-3": "^3.1.8",
     "vue-router": "^4.0.12",
     "vuex": "^4.0.2"
   },

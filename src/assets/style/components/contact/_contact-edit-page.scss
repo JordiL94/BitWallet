@@ -1,0 +1,55 @@
+.contact-edit {
+    align-self: center;
+    min-width: 370px;
+    max-width: 760px;
+    .edit-actions {
+        width: 100%;
+        margin-bottom: .5rem;
+        a {
+            font-size: 1.2rem;
+            color: inherit;
+            padding: 7px;
+            border-radius: 7px;
+            &:hover {
+                background-color: rgba(218, 207, 207, 0.24);
+            }
+        }
+        button {
+            background-color: inherit;
+            padding: 7px;
+            cursor: pointer;
+            border: none;
+            border-radius: 7px;
+            &:hover {
+                background-color: rgba(218, 207, 207, 0.24);
+            }
+            img {
+                height: 2rem;
+                width: 2rem;
+            }
+        }
+    }
+    form {
+        width: 100%;
+        gap: .5rem;
+        h4 {
+            font-size: 1.2rem;
+        }
+        input {
+            font-size: 1rem;
+            border: none;
+            padding: 5px;
+            width: 80%;
+        }
+        button {
+            width: fit-content;
+            padding: .5rem 1rem;
+            border: none;
+            background-color: #03c453;
+            border-radius: 7px;
+            color: inherit;
+            font-size: 1rem;
+            align-self: flex-end;
+        }
+    }
+}

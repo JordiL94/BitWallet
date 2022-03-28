@@ -1,0 +1,16 @@
+.transfer-fund {
+    margin-bottom: 1rem;
+    button {
+        background-color: #529b40;
+        border: none;
+        padding: 5px 10px;
+        color: inherit;
+        &:hover {
+            background-color: #68c451;
+        }
+    }
+    input {
+        padding: 5px;
+        border: none;
+    }
+}

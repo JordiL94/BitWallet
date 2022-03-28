@@ -1,4 +1,9 @@
 .contact-list {
+    li {
+        :hover {
+            background-color: #5795b9;
+        }
+    }
     .add-contact {
         position: absolute;
         bottom: 5px;
@@ -8,6 +13,9 @@
         font-weight: 300;
         border-radius: 50%;
         font-size: 2rem;
-        background-color: red;
+        background-color: #C74B50;
+        &:hover {
+            background-color: #c73035;
+        }
     }
 }

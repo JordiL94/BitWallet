@@ -8,12 +8,17 @@
 // Components
 @import "./components/app-header";
 @import "./components/transfer/move-list";
+@import "./components/transfer/transfer-fund";
 @import "./components/contact/contact-preview";
+@import "./components/contact/contact-edit-page";
 @import "./components/contact/contact-filter";
 @import "./components/contact/contact-list";
+@import "./components/chart";
 
 // Views
 @import "./views/signup-page";
+@import "./views/contact-details";
+@import "./views/home-page";
 
 pre {
     text-align: left;

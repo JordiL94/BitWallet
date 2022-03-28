@@ -1,9 +1,10 @@
 <template>
-	<section class="home-page main-layout flex width-all space-between">
-		<div>
+	<section class="home-page main-layout flex width-all space-around">
+		<div class="bitcoin-user-info flex column">
 			<h1>Hello {{ user.name }}</h1>
 			<h3>You currently have {{ user.coins }} bitcoins</h3>
-			<Chart :coins="user.coins" />
+			<h4>Bitcoin value range for the past 5 months:</h4>
+			<Chart v-if="chartdata" :coins="user.coins" :chartdata="chartdata" />
 		</div>
 		<MoveList :moves="moves" :title="title" />
 	</section>
@@ -15,14 +16,17 @@
 	import Chart from '@/components/Chart.vue';
 	export default {
 		components: {
-			bitcoinService,
 			MoveList,
 			Chart,
 		},
 		data() {
 			return {
 				rate: null,
+				chartdata: null
 			};
+		},
+		async created() {
+			this.chartdata = await bitcoinService.getMarketPrice();
 		},
 		computed: {
 			user() {

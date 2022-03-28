@@ -1,8 +1,15 @@
 <template>
 	<section v-if="moves" class="move-list flex column">
-		<h4>{{ title }}</h4>
+		<div class="moves-title flex">
+			<img src="../../assets/img/bitcoin.png" />
+			<h4>{{ title }}</h4>
+		</div>
 		<ul class="clean-list">
-			<li v-for="(move, idx) in moves" :key="move.toId + ':' + idx" class="flex column space-around">
+			<li
+				v-for="(move, idx) in moves"
+				:key="move.toId + ':' + idx"
+				class="flex column space-around"
+			>
 				<div class="flex space-between">
 					<h5>{{ move.to }}</h5>
 					<p>{{ move.amount }}</p>
