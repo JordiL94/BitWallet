@@ -1,5 +1,14 @@
 .home-page {
+    flex-direction: column;
+    gap: 17rem;
     .bitcoin-user-info {
         gap: .5rem;
+    }
+}
+
+@media screen and (min-width: 760px) {
+    .home-page {
+        justify-content: space-around;
+        flex-direction: row;
     }
 }

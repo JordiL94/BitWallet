@@ -1,5 +1,5 @@
 <template>
-	<section class="home-page main-layout flex width-all space-around">
+	<section class="home-page main-layout flex width-all">
 		<div class="bitcoin-user-info flex column">
 			<h1>Hello {{ user.name }}</h1>
 			<h3>You currently have {{ user.coins }} bitcoins</h3>
