@@ -1,7 +1,7 @@
 <template>
 	<section v-if="contact" class="contact-details main-layout flex column align-center">
-		<div class="flex space-between">
-			<RouterLink to="/contact">Back</RouterLink>
+		<div class="flex width-all space-between">
+			<RouterLink to="/contact">← Back</RouterLink>
 			<RouterLink :to="`/contact/edit/${contact._id}`">Edit</RouterLink>
 		</div>
 		<h3>{{ contact.name }}</h3>
